@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+  - "12"
+script:
+  - npm test
+  - npm run build
+deploy:
+  provider: heroku
+  app: hooandee-toxtricity
+  api_key:
+    secure: Db+CZcCrk+3ZsSAfOVwKzr1bgFN/Ua0WIQNXnyaHx2NjVfpKQDkknXL96QqLvvtclFT+dbtKv3xnk74PpnvPbyK3GO0zNOdlmP6yCD5GyOTcxCigyJANJbv2fE+XwEUdFoSgKi2cFV5LlkG3OWtiINUh4I2FHCTxLqQTZPgCDo1skB8GMeq6j+CS7ugVZr9dVY2vfVxZCT58pCTt7U5PTFStrUfUKJTrtVQzQQM5wiG7/Pi9lIAQ7b4CUT+IoqZl4VHpIZ1xuxaM8fTP5w0BzCPWhX8uTqyR5BTYZwrFyGrtykeDZOJA86brEPerdMFYct8/MZ7DlrURepkli/m5O/6dvBC8xonDPTvymiB8ewfaJcyGec++zgPkUZ1D2ROsICZBs5sHGao2adNN2OsMtSGJwXcTG9WknP8rCvtAKmQ27rgueDt0oXH9qoh0/bNIU/yGDGJh2RqOKU7ujwjy0FCSTIoNCLszYMyFfrfLXmrE9YeBdCf98DldaLohKIalWkAyKs3CDTYGnFDQhjOYUZ+M7Syu0hOLJXJRDLNgjjiNtn8JuQVy2ZddR7r0Th2nJTECcPOeBJLMuyOMeHiBhrxdA52Gwoz/N489Tw6mkd7X2ZkGRC03bboOxaJU2kAGbJC73HARQ/IV5Vi5NJjrKj1EvwmeCNxnxVfUaELndK4=
