@@ -9,9 +9,11 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
-    "serve": "^11.3.0"
+    "serve": "^11.3.0",
+    "styled-components": "^5.1.0"
   },
   "scripts": {
+    "start-dev": "react-scripts start",
     "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
