@@ -1,48 +1,48 @@
 import React, { useReducer } from "react";
 
 import {
-  ERROR_FETCHING_GAMES_INFO,
-  FETCHING_GAMES_INFO,
-  SUCCESS_FETCHING_GAMES_INFO,
-} from "./Games/actionTypes";
+  ERROR_FETCHING_USERS_INFO,
+  FETCHING_USERS_INFO,
+  SUCCESS_FETCHING_USERS_INFO,
+} from "./Users/actionTypes";
 
 export const initialState = {
-  games: [],
+  users: [],
 };
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case FETCHING_GAMES_INFO: {
+    case FETCHING_USERS_INFO: {
       return {
         ...state,
         hasFailed: false,
         isFetching: true,
-        status: FETCHING_GAMES_INFO,
-        games: { isFetching: true, error: false },
+        status: FETCHING_USERS_INFO,
+        users: { isFetching: true, error: false },
       };
     }
 
-    case SUCCESS_FETCHING_GAMES_INFO: {
+    case SUCCESS_FETCHING_USERS_INFO: {
       return {
         ...state,
         hasFailed: false,
         isPosting: false,
-        status: SUCCESS_FETCHING_GAMES_INFO,
-        games: {
-          data: [...action.response],
+        status: SUCCESS_FETCHING_USERS_INFO,
+        users: {
+          data: [...action.response.data],
           isFetching: false,
           error: false,
         },
       };
     }
 
-    case ERROR_FETCHING_GAMES_INFO: {
+    case ERROR_FETCHING_USERS_INFO: {
       return {
         ...state,
         hasFailed: true,
         isFetching: false,
-        status: ERROR_FETCHING_GAMES_INFO,
-        games: { ...state.games, isFetching: false, error: action.response },
+        status: ERROR_FETCHING_USERS_INFO,
+        users: { ...state.users, isFetching: false, error: action.response },
       };
     }
 
