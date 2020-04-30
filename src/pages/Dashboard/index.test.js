@@ -1,16 +1,20 @@
 import React from "react";
-import { fireEvent, render } from "@testing-library/react";
+import { fireEvent, render, unmount } from "@testing-library/react";
 import { Component } from "./index";
 
-describe("The Dashboard component", () => {
-  let component;
+jest.mock("../../hooks/Users", () =>
+  jest.fn().mockReturnValue({ getUsersInfo: jest.fn().mockReturnValue({}) })
+);
 
-  beforeAll(() => {
-    component = render(<Component />);
+describe("The Dashboard component", () => {
+  afterAll(() => {
+    unmount();
   });
 
   test("renders the header", () => {
-    const header = component.getByTestId("header");
+    const { getByTestId } = render(<Component />);
+
+    const header = getByTestId("header");
     expect(header).toBeInTheDocument();
   });
 
